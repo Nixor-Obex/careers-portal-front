@@ -1,1 +1,380 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="styles.css" />
+    <title>Nixor Obex Job Listings</title>
+    <style>
+      body {
+        margin: 0;
+        padding-top: 100px;
+      }
+
+      header {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        background-color: #f8f9fa;
+        display: flex;
+        align-items: center;
+        padding: 10px 20px;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        z-index: 1000;
+      }
+
+      header img {
+        height: 80px;
+        margin-right: 20px;
+      }
+
+      .team-section h2 {
+        color: #4a4a4abc;
+        border-bottom: 2px solid rgba(128, 128, 128, 0.125);
+        padding-bottom: 10px;
+        margin-bottom: 20px;
+        width: 5%;
+        margin-left: 7.5%;
+      }
+
+      .job-card h3,
+      .job-card p {
+        display: block;
+        margin: 0;
+        margin-left: 8%;
+      }
+
+      .job-card {
+        margin-bottom: 20px;
+      }
+
+      .apply-button {
+        margin-top: 10px;
+        margin-left: 8%;
+      }
+
+      .filter-container {
+        display: flex;
+        justify-content: space-around;
+        margin: 20px 0;
+      }
+
+      .filter-dropdown {
+        padding: 10px;
+        font-size: 16px;
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <img src="n1.png" alt="Nixor Obex Logo" />
+      <!-- <h1>Nixor Obex</h1> -->
+    </header>
+    <main>
+      <div class="filter-container">
+        <select class="filter-dropdown" id="locationTypeFilter">
+          <option value="">All Location Types</option>
+          <option value="HYBRID">HYBRID</option>
+          <option value="REMOTE">REMOTE</option>
+          <option value="ONSITE">ONSITE</option>
+        </select>
+        <select class="filter-dropdown" id="locationFilter">
+          <option value="">All Locations</option>
+          <option value="TOKYO , JAPAN">TOKYO , JAPAN</option>
+          <!-- we can add more location options here -->
+        </select>
+        <select class="filter-dropdown" id="teamFilter">
+          <option value="">All Teams</option>
+          <option value="Finance">Finance</option>
+          <option value="HR">HR</option>
+          <option value="LEGAL">LEGAL</option>
+          <option value="R&D">R&D</option>
+          <option value="BUSINESS MANAGEMENT">BUSINESS MANAGEMENT</option>
+        </select>
+        <select class="filter-dropdown" id="workTypeFilter">
+          <option value="">All Work Types</option>
+          <option value="FULL-TIME (REGULAR)">FULL-TIME (REGULAR)</option>
+          <!-- we can add more work type options here -->
+        </select>
+      </div>
+
+      <section class="team-section" id="finance">
+        <h2 style="color: #4a4a4abc">Finance</h2>
+        <div
+          class="job-card"
+          data-location-type="HYBRID"
+          data-location="TOKYO , JAPAN"
+          data-team="Finance"
+          data-work-type="FULL-TIME (REGULAR)"
+        >
+          <h3 style="color: #3d3d3de9">
+            Deputy Manager of Finance and Investor Relations Group
+          </h3>
+          <p style="color: #4a4a4abc">TOKYO , JAPAN</p>
+          <p style="color: #4a4a4abc">HYBRID - FULL-TIME (REGULAR)</p>
+          <button class="apply-button">Apply</button>
+        </div>
+      </section>
+
+      <section class="team-section" id="legal">
+        <h2 style="color: #4a4a4abc">LEGAL</h2>
+        <div
+          class="job-card"
+          data-location-type="HYBRID"
+          data-location="TOKYO , JAPAN"
+          data-team="LEGAL"
+          data-work-type="FULL-TIME (REGULAR)"
+        >
+          <h3 style="color: #3d3d3de9">Global Legal Officer</h3>
+          <p style="color: #4a4a4abc">TOKYO , JAPAN</p>
+          <p style="color: #4a4a4abc">HYBRID - FULL-TIME (REGULAR)</p>
+          <button class="apply-button">Apply</button>
+        </div>
+        <div
+          class="job-card"
+          data-location-type="HYBRID"
+          data-location="TOKYO , JAPAN"
+          data-team="LEGAL"
+          data-work-type="FULL-TIME (REGULAR)"
+        >
+          <h3 style="color: #3d3d3de9">Legal Officer</h3>
+          <p style="color: #4a4a4abc">TOKYO , JAPAN</p>
+          <p style="color: #4a4a4abc">HYBRID - FULL-TIME (REGULAR)</p>
+          <button class="apply-button">Apply</button>
+        </div>
+      </section>
+
+      <section class="team-section" id="hr">
+        <h2 style="color: #4a4a4abc">HR</h2>
+        <div
+          class="job-card"
+          data-location-type="HYBRID"
+          data-location="TOKYO , JAPAN"
+          data-team="HR"
+          data-work-type="FULL-TIME (REGULAR)"
+        >
+          <h3 style="color: #3d3d3de9">Senior HR Generalist</h3>
+          <p style="color: #4a4a4abc">TOKYO , JAPAN</p>
+          <p style="color: #4a4a4abc">HYBRID - FULL-TIME (REGULAR)</p>
+          <button class="apply-button">Apply</button>
+        </div>
+      </section>
+
+      <section class="team-section" id="rd">
+        <h2 style="color: #4a4a4abc">R&D</h2>
+        <div
+          class="job-card"
+          data-location-type="HYBRID"
+          data-location="TOKYO , JAPAN"
+          data-team="R&D"
+          data-work-type="FULL-TIME (REGULAR)"
+        >
+          <h3 style="color: #3d3d3de9">DevOps Engineer for Ground Segment</h3>
+          <p style="color: #4a4a4abc">TOKYO , JAPAN</p>
+          <p style="color: #4a4a4abc">HYBRID - FULL-TIME (REGULAR)</p>
+          <button class="apply-button">Apply</button>
+        </div>
+        <div
+          class="job-card"
+          data-location-type="HYBRID"
+          data-location="TOKYO , JAPAN"
+          data-team="R&D"
+          data-work-type="FULL-TIME (REGULAR)"
+        >
+          <h3 style="color: #3d3d3de9">Electrical AIT Engineer</h3>
+          <p style="color: #4a4a4abc">TOKYO , JAPAN</p>
+          <p style="color: #4a4a4abc">HYBRID - FULL-TIME (REGULAR)</p>
+          <button class="apply-button">Apply</button>
+        </div>
+        <div
+          class="job-card"
+          data-location-type="HYBRID"
+          data-location="TOKYO , JAPAN"
+          data-team="R&D"
+          data-work-type="FULL-TIME (REGULAR)"
+        >
+          <h3 style="color: #3d3d3de9">Embedded Software Engineer</h3>
+          <p style="color: #4a4a4abc">TOKYO , JAPAN</p>
+          <p style="color: #4a4a4abc">HYBRID - FULL-TIME (REGULAR)</p>
+          <button class="apply-button">Apply</button>
+        </div>
+        <div
+          class="job-card"
+          data-location-type="HYBRID"
+          data-location="TOKYO , JAPAN"
+          data-team="R&D"
+          data-work-type="FULL-TIME (REGULAR)"
+        >
+          <h3 style="color: #3d3d3de9">Engineering Interns</h3>
+          <p style="color: #4a4a4abc">TOKYO , JAPAN</p>
+          <p style="color: #4a4a4abc">HYBRID - FULL-TIME (REGULAR)</p>
+          <button class="apply-button">Apply</button>
+        </div>
+        <div
+          class="job-card"
+          data-location-type="HYBRID"
+          data-location="TOKYO , JAPAN"
+          data-team="R&D"
+          data-work-type="FULL-TIME (REGULAR)"
+        >
+          <h3 style="color: #3d3d3de9">Lander System Engineer</h3>
+          <p style="color: #4a4a4abc">TOKYO , JAPAN</p>
+          <p style="color: #4a4a4abc">HYBRID - FULL-TIME (REGULAR)</p>
+          <button class="apply-button">Apply</button>
+        </div>
+        <div
+          class="job-card"
+          data-location-type="HYBRID"
+          data-location="TOKYO , JAPAN"
+          data-team="R&D"
+          data-work-type="FULL-TIME (REGULAR)"
+        >
+          <h3 style="color: #3d3d3de9">Payload Engineer</h3>
+          <p style="color: #4a4a4abc">TOKYO , JAPAN</p>
+          <p style="color: #4a4a4abc">HYBRID - FULL-TIME (REGULAR)</p>
+          <button class="apply-button">Apply</button>
+        </div>
+      </section>
+
+      <section class="team-section" id="business-management">
+        <h2 style="color: #4a4a4abc">BUSINESS MANAGEMENT</h2>
+        <div
+          class="job-card"
+          data-location-type="HYBRID"
+          data-location="TOKYO , JAPAN"
+          data-team="BUSINESS MANAGEMENT"
+          data-work-type="FULL-TIME (REGULAR)"
+        >
+          <h3 style="color: #3d3d3de9">Executive VP</h3>
+          <p style="color: #4a4a4abc">TOKYO , JAPAN</p>
+          <p style="color: #4a4a4abc">HYBRID - FULL-TIME (REGULAR)</p>
+          <button class="apply-button">Apply</button>
+        </div>
+        <div
+          class="job-card"
+          data-location-type="HYBRID"
+          data-location="TOKYO , JAPAN"
+          data-team="BUSINESS MANAGEMENT"
+          data-work-type="FULL-TIME (REGULAR)"
+        >
+          <h3 style="color: #3d3d3de9">Indo Pacific Sales Associate</h3>
+          <p style="color: #4a4a4abc">TOKYO , JAPAN</p>
+          <p style="color: #4a4a4abc">HYBRID - FULL-TIME (REGULAR)</p>
+          <button class="apply-button">Apply</button>
+        </div>
+        <div
+          class="job-card"
+          data-location-type="HYBRID"
+          data-location="TOKYO , JAPAN"
+          data-team="BUSINESS MANAGEMENT"
+          data-work-type="FULL-TIME (REGULAR)"
+        >
+          <h3 style="color: #3d3d3de9">Indo Pacific Sales Specialist</h3>
+          <p style="color: #4a4a4abc">TOKYO , JAPAN</p>
+          <p style="color: #4a4a4abc">HYBRID - FULL-TIME (REGULAR)</p>
+          <button class="apply-button">Apply</button>
+        </div>
+        <div
+          class="job-card"
+          data-location-type="HYBRID"
+          data-location="TOKYO , JAPAN"
+          data-team="BUSINESS MANAGEMENT"
+          data-work-type="FULL-TIME (REGULAR)"
+        >
+          <h3 style="color: #3d3d3de9">Engineering Interns</h3>
+          <p style="color: #4a4a4abc">TOKYO , JAPAN</p>
+          <p style="color: #4a4a4abc">HYBRID - FULL-TIME (REGULAR)</p>
+          <button class="apply-button">Apply</button>
+        </div>
+        <div
+          class="job-card"
+          data-location-type="HYBRID"
+          data-location="TOKYO , JAPAN"
+          data-team="BUSINESS MANAGEMENT"
+          data-work-type="FULL-TIME (REGULAR)"
+        >
+          <h3 style="color: #3d3d3de9">Senior Payload Sales Specialist</h3>
+          <p style="color: #4a4a4abc">TOKYO , JAPAN</p>
+          <p style="color: #4a4a4abc">HYBRID - FULL-TIME (REGULAR)</p>
+          <button class="apply-button">Apply</button>
+        </div>
+        <div
+          class="job-card"
+          data-location-type="HYBRID"
+          data-location="TOKYO , JAPAN"
+          data-team="BUSINESS MANAGEMENT"
+          data-work-type="FULL-TIME (REGULAR)"
+        >
+          <h3 style="color: #3d3d3de9">Business Analyst</h3>
+          <p style="color: #4a4a4abc">TOKYO, JAPAN</p>
+          <p style="color: #4a4a4abc">HYBRID - FULL-TIME (REGULAR)</p>
+          <button class="apply-button">Apply</button>
+        </div>
+      </section>
+
+      <footer style="text-align: center">
+        <p>© Nixor Obex. All rights reserved.</p>
+      </footer>
+    </main>
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        const filters = {
+          locationType: "",
+          location: "",
+          team: "",
+          workType: "",
+        };
+
+        const locationTypeFilter =
+          document.getElementById("locationTypeFilter");
+        const locationFilter = document.getElementById("locationFilter");
+        const teamFilter = document.getElementById("teamFilter");
+        const workTypeFilter = document.getElementById("workTypeFilter");
+        const jobCards = document.querySelectorAll(".job-card");
+
+        function applyFilters() {
+          jobCards.forEach((card) => {
+            const locationType = card.getAttribute("data-location-type");
+            const location = card.getAttribute("data-location");
+            const team = card.getAttribute("data-team");
+            const workType = card.getAttribute("data-work-type");
+
+            if (
+              (filters.locationType === "" ||
+                filters.locationType === locationType) &&
+              (filters.location === "" || filters.location === location) &&
+              (filters.team === "" || filters.team === team) &&
+              (filters.workType === "" || filters.workType === workType)
+            ) {
+              card.style.display = "block";
+            } else {
+              card.style.display = "none";
+            }
+          });
+        }
+
+        locationTypeFilter.addEventListener("change", (event) => {
+          filters.locationType = event.target.value;
+          applyFilters();
+        });
+
+        locationFilter.addEventListener("change", (event) => {
+          filters.location = event.target.value;
+          applyFilters();
+        });
+
+        teamFilter.addEventListener("change", (event) => {
+          filters.team = event.target.value;
+          applyFilters();
+        });
+
+        workTypeFilter.addEventListener("change", (event) => {
+          filters.workType = event.target.value;
+          applyFilters();
+        });
+      });
+    </script>
+  </body>
+</html>
 
