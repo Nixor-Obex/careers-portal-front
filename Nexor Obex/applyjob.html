@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nixor Obex</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        body {
+            margin: 30px;
+            padding-top: 100px; /* Ensures content is not hidden behind the fixed header */
+            font-family: Arial, sans-serif;
+            background-color: #f5f5f5;
+        }
+
+
+
+        header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            background-color: #ffffff;
+            display: flex;
+            align-items: center;
+            padding: 10px 20px; /* Adjust padding if needed */
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            z-index: 1000;
+        }
+
+        header img {
+            height: 80px;
+            margin-right: 20px;
+        }
+
+        header .navbar {
+            margin-left: auto; /* Pushes the navbar to the right */
+            display: flex;
+            gap: 20px; /* Space between the buttons */
+        }
+
+        header .navbar a {
+            color: rgb(255, 111, 50); /* Button color */
+            text-decoration: none;
+            padding: 10px 15px; /* Padding for button appearance */
+            border-radius: 5px; /* Rounded corners for buttons */
+            transition: background-color 0.3s, color 0.3s;
+        }
+
+        header .navbar a:hover {
+            background-color: rgb(255, 111, 50); /* Background color on hover */
+            color: #fff; /* Text color on hover */
+        }
+
+
+        .container {
+            max-width: 600px;
+            margin: 0 auto;
+            padding: 20px;
+            /* border: 1px solid #ddd; */
+            /* border-radius: 10px; */
+            /* box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); */
+        }
+
+        h1 {
+            text-align: center;
+            font-size: 18px;
+        }
+
+        .job-name {
+            text-align: center;
+            font-size: 28px;
+            margin-bottom: 40px;
+            font-weight: bold;
+        }
+
+
+
+        form {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+            /* background-color: #d2d2d2; */
+        }
+
+        /* label {
+            font-size: 14px;
+        } */
+
+        input, textarea {
+            padding: 10px;
+            font-size: 14px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+        }
+
+        button {
+            padding: 10px 15px;
+            font-size: 14px;
+            background-color: rgb(255, 111, 50);
+            color: #ffffff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s, color 0.3s;
+        }
+
+        button:hover {
+            background-color: rgb(244, 70, 26);
+            color:  #ffffff;
+            border: 1px solid rgb(255, 111, 50);
+        }
+    </style>
+</head>
+<body>
+
+    <header class="header">
+        <img src="n1.png" alt="Nixor Obex Logo" />
+        <section class="flex">
+            <nav class="navbar">
+                <a href="job.html">Home</a>
+                <a href="login.html">LogIn</a>
+            </nav>
+        </section>
+    </header>
+    
+    <!-- header - section - ends here -->
+    
+
+<div class="container">
+    <div id="job-name" class="job-name"></div>
+    <h1>Submit Your Application</h1>
+    <form action="submit-application.html" method="post">
+        <label for="full-name">Full Name✱:</label>
+        <input type="text" id="full-name" name="full-name" required>
+         
+        <label for="email">Email✱:</label>
+        <input type="email" id="email" name="email" required>
+       
+        <label for="phone">Phone✱:</label>
+        <input type="tel" id="phone" name="phone" required>
+       
+        <label for="current-location">Current Location:</label>
+        <input type="text" id="current-location" name="current-location">
+       
+        <label for="current-company">Current Company✱:</label>
+        <input type="text" id="current-company" name="current-company" required>
+        
+        <!-- <h3>LINKS</h3> -->
+
+        <label for="linkedin-url">LinkedIn URL:</label>
+        <input type="url" id="linkedin-url" name="linkedin-url">
+        
+        <label for="github-url">GitHub URL:</label>
+        <input type="url" id="github-url" name="github-url">
+        
+        <label for="portfolio-url">Portfolio URL:</label>
+        <input type="url" id="portfolio-url" name="portfolio-url">
+       
+        <label for="resume">Resume/CV✱:</label>
+        <input type="file" id="resume" name="resume" required>
+        
+        <label for="cover-letter">Add a cover letter or anything else you want to share:</label>
+        <textarea id="cover-letter" name="cover-letter" rows="6" required></textarea>
+
+        <button type="submit">Submit Application</button>
+    </form>
+</div>
+
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        const urlParams = new URLSearchParams(window.location.search);
+        const jobId = urlParams.get('job');
+
+        console.log('Job ID from URL:', jobId);  // Debugging: Check the jobId value
+        
+        const jobs = {
+            job1: 'Deputy Manager of Finance and Investor Relations Group',
+            job2: 'Global Legal Officer',
+            job3: 'Legal Officer',
+            job4: 'Senior HR Generalist',
+            job5: 'DevOps Engineer for Ground Segment',
+            job6: 'Electrical AIT Engineer',
+            job7: 'Embedded Software Engineer',
+            job8: 'Engineering Interns',
+            job9: 'Lander System Engineer',
+            job10: 'Payload Engineer',
+            job11: 'Executive VP',
+            job12: 'Indo Pacific Sales Associate',
+            job13: 'Indo Pacific Sales Specialist',
+            job14: 'Engineering Interns',
+            job15: 'Senior Payload Sales Specialist',
+            job16: 'Business Analyst'
+        };
+        console.log('Jobs object:', jobs);
+        if (jobs[jobId]) {
+            // console.log('Job found:', jobs[jobId]);
+            document.getElementById('job-name').textContent = ` ${jobs[jobId]}`;
+        } else {
+            document.getElementById('job-name').textContent = 'Unknown Position';
+        }
+    });
+</script>
+
+
+</body>
+</html>

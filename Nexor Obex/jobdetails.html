@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nixor Obex</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+body {
+
+  margin: 30px;
+  padding-top: 100px; /* Ensures content is not hidden behind the fixed header */
+   background-color: #f5f5f5;
+}
+
+header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background-color: #ffffff;
+  display: flex;
+  align-items: center;
+  padding: 10px 20px; /* Adjust padding if needed */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  z-index: 1000;
+}
+
+
+
+header img {
+  height: 80px;
+  margin-right: 20px;
+}
+
+header .navbar {
+  margin-left: auto; /* Pushes the navbar to the right */
+  display: flex;
+  gap: 20px; /* Space between the buttons */
+}
+
+header .navbar a {
+  color: rgb(255, 111, 50); /* Button color */
+  text-decoration: none;
+  padding: 10px 15px; /* Padding for button appearance */
+  border-radius: 5px; /* Rounded corners for buttons */
+  transition: background-color 0.3s, color 0.3s;
+}
+
+header .navbar a:hover {
+  background-color: rgb(255, 111, 50); /* Background color on hover */
+  color: #fff; /* Text color on hover */
+}
+
+
+/* .job-details, #job-description {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            text-align: left;
+            margin: 0 auto; 
+            width: 80%; 
+            font-size: 19px; 
+        }
+
+
+        .job-details h1, #job-description h1 {
+            text-align: center;
+            font-size: 20px; 
+        } */
+
+/* .apply-button {
+  margin-top: 10px;
+  margin-left: 8%;
+} */
+
+
+</style>
+</head>
+<body>
+<header class="header">
+    <img src="n1.png" alt="Nixor Obex Logo" />
+    <section class="flex">
+
+        <nav class="navbar">
+            <a href="job.html">Home</a>
+            <a href="login.html">LogIn</a>
+        </nav>
+    </section>
+</header>
+
+<!-- header - section - endsd - here -->
+
+
+<!-- view job section starts -->
+<div class="job-details">
+    <h1 class="heading">
+        <!-- Job Details -->
+    </h1>
+</div>
+
+<!-- view job section ends -->
+<section id="job-description">
+    <!-- Job description will be rendered here -->
+</section>
+
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        const urlParams = new URLSearchParams(window.location.search);
+        const jobId = urlParams.get('job');
+         
+        const jobs = {
+            job1: {
+                title: 'Deputy Manager of Finance and Investor Relations Group',
+                
+                description: `
+                    Join our team as the Deputy Manager of Finance and Investor Relations! You'll shape financial strategy, engage with investors, and drive growth. Qualifications include finance expertise, strong communication skills, and familiarity with SEC regulations.
+                    
+                    Responsibilities:
+                    <ul>
+                        <li>Financial Strategy: Collaborate with senior leadership to develop and execute financial strategies aligned with our business goals. Analyze financial data, identify trends, and provide actionable insights.</li>
+                        <li>Investor Relations: Be the face of our company to investors, analysts, and stakeholders. Prepare and deliver compelling presentations, earnings calls, and investor updates. Nurture relationships and address inquiries.</li>
+                        <li>Financial Reporting: Oversee accurate and timely financial reporting, including quarterly and annual filings. Ensure compliance with regulatory requirements.</li>
+                        <li>Forecasting and Budgeting: Lead the budgeting process, working closely with department heads. Monitor performance against budgets and provide variance analysis.</li>
+                        <li>Risk Management: Identify financial risks and implement effective risk mitigation strategies.</li>
+                        <li>Team Leadership: Manage a talented team, fostering professional growth and collaboration.</li>
+                    </ul>
+                    
+                    Qualifications:
+                    <ul>
+                        <li>Bachelor’s degree in Finance, Accounting, or related field (Master’s preferred).</li>
+                        <li>Proven experience in finance, investor relations, or related roles.</li>
+                        <li>Strong analytical skills and proficiency in financial modeling.</li>
+                        <li>Excellent communication and presentation abilities.</li>
+                        <li>Strategic mindset with a keen eye for detail.</li>
+                        <li>Familiarity with SEC regulations and financial markets.</li>
+                    </ul>
+                    
+                    Why Join Us?
+                    <ul>
+                        <li>Opportunity to make a significant impact in a growing organization.</li>
+                        <li>Collaborative and inclusive work environment.</li>
+                        <li>Competitive compensation and benefits package.</li>
+                        <li>Professional development and career advancement opportunities.</li>
+                    </ul>
+                `
+            },
+            job2: {
+                title: 'Global Legal Officer',
+                description: `We are looking for a talented individual to
+                                <br> oversee global legal operations...
+                                <br> oversee global legal operations...
+                                <br> oversee global legal operations...
+                                <br> oversee global legal operations...
+                                <br> oversee global legal operations...
+                                  <br>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed euismod, ante ac tincidunt ullamcorper, justo libero ultrices urna...
+
+                                `
+            },
+            job3: {
+                title: 'Legal Officer',
+                description: 'We are looking for a talented individual to oversee global legal operations...'
+            },
+            job4: {
+                title: ' Senior HR Generalist',
+                description: 'We are looking for a talented individual to oversee global legal operations...'
+            },
+            job5: {
+                title: ' DevOps Engineer for Ground Segment',
+                description: 'We are looking for a talented individual to oversee global legal operations...'
+            },
+            job6: {
+                title: ' Electrical AIT Engineer',
+                description: 'We are looking for a talented individual to oversee global legal operations...'
+            },
+            job7: {
+                title: 'Embedded Software Engineer',
+                description: 'We are looking for a talented individual to oversee global legal operations...'
+            },
+            job8: {
+                title: ' Engineering Interns',
+                description: 'We are looking for a talented individual to oversee global legal operations...'
+            },
+            job9: {
+                title: ' Lander System Engineer',
+                description: 'We are looking for a talented individual to oversee global legal operations...'
+            },
+            job10: {
+                title: ' Payload Engineer',
+                description: 'We are looking for a talented individual to oversee global legal operations...'
+            },
+            job11: {
+                title: ' Executive VP',
+                description: 'We are looking for a talented individual to oversee global legal operations...'
+            },
+            job12: {
+                title: ' Indo Pacific Sales Associate',
+                description: 'We are looking for a talented individual to oversee global legal operations...'
+            },
+            job13: {
+                title: 'Indo Pacific Sales Specialist',
+                description: 'We are looking for a talented individual to oversee global legal operations...'
+            },
+            job14: {
+                title: ' Engineering Interns',
+                description: 'We are looking for a talented individual to oversee global legal operations...'
+            },
+            job15: {
+                title: ' Senior Payload Sales Specialist',
+                description: 'We are looking for a talented individual to oversee global legal operations...'
+            },
+            job16: {
+                title: 'Business Analyst',
+                description: 'We are looking for a talented individual to oversee global legal operations...'
+            }
+
+        };
+        if (jobs[jobId]) {
+            document.getElementById('job-description').innerHTML = `
+                <h1>${jobs[jobId].title}</h1>
+                <p>${jobs[jobId].description}</p>
+                <button class="apply-button" id="apply-button" data-job-id="${jobId}">Apply for This</button>
+            `;
+
+            document.getElementById('apply-button').addEventListener('click', function() {
+                const jobId = this.getAttribute('data-job-id');
+                window.location.href = `applyjob.html?job=${jobId}`;
+            });
+        } else {
+            document.getElementById('job-description').innerHTML = '<p>Job not found.</p>';
+        }
+    });
+</script>
+
+
+
+</body>
+</html>

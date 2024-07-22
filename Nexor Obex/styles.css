@@ -1,0 +1,141 @@
+
+
+.filter-container {
+  display: flex;
+  justify-content: center;
+  margin: 20px 0;
+  margin-right:6%;
+}
+
+.filter-dropdown {
+  padding: 5px;
+  font-size: 16px;
+  width: 180px; 
+  margin: 0 10px; 
+  border-radius: 5px; 
+  border: 1px solid #ccc; 
+}
+
+
+
+
+
+
+
+.job-listings {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  padding: 20px;
+}
+
+.job-card {
+  background-color: #f5f5f5;
+  padding: 10px;
+  margin-bottom: 20px;
+  border-radius: 5px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 85%;
+}
+
+.apply-button {
+  background-color: #ff4136;
+  color: #fff;
+  padding: 10px;
+  border: none;
+  border-radius: 5px;
+  text-transform: uppercase;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.apply-button:hover {
+  background-color: #c00;
+}
+
+/* footer {
+  background-color: #33333327;
+  color: #ebebf1;
+  padding: 50px;
+} */
+
+
+
+.filter-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #f5f5f5;
+  padding: 10px;
+}
+
+.filter-dropdown {
+  margin: 0 10px;
+  padding: 5px;
+  font-family: Arial, sans-serif;
+  background-color: #5d5c5c14;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  color: #333;
+}
+
+
+      
+/* .footer-bottom p {
+  margin: 10; 
+  padding-top: 2%; 
+  margin-left: 1%;
+} */
+
+
+
+.apply-button2 {
+  background-color: rgb(255, 111, 50);
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  font-size: 16px;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+.apply-button2:hover {
+  background-color: rgb(255, 90, 30);
+}
+
+
+
+/* .header .flex {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 0;
+  } */
+  
+  /* .header .navbar {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    } */
+    
+    
+    /* .header .navbar a, .header .login-nav a {
+      margin: 0 10px;
+      text-decoration: none;
+      color: #333;
+      } */
+      
+      
+      
+      /* .header .navbar a {
+        margin: 0 10px;
+        text-decoration: none;
+        color: #333;
+        } */
+        
+
+
+
+        
