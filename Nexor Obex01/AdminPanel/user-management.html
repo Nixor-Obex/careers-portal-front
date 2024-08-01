@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Management</title>
+    <style>
+        /* Variables for styling */
+        :root {
+            --sidebar-width-full: 250px;
+            --sidebar: #333;
+            --sidebar-text: #fff;
+            --sidebar-icons: #ccc;
+            --white: #fff;
+            --info: #007bff;
+            --shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            --sidebar-link-padding: 12px 15px;
+            --sidebar-icon-size: 20px;
+            --button-color: rgb(255, 111, 50);
+        }
+
+       
+        /* Importing the MILLING font */
+        @font-face {
+            font-family: 'MILLING';
+            src: url('nixorfont.otf') format('truetype');
+        }
+
+        body {
+            font-family: 'MILLING', sans-serif;
+        }
+
+        /* Reset default margin and padding */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        /* Header */
+        .header {
+            width: 100%;
+            background-color: var(--white);
+            padding: 20px;
+            box-shadow: var(--shadow);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            z-index: 1000;
+        }
+
+        .header h1 {
+            margin: 0;
+        }
+
+        /* Sidebar */
+        .left-sidebar {
+            width: var(--sidebar-width-full);
+            height: calc(100vh - 64px);
+            background: var(--sidebar);
+            color: var(--sidebar-text);
+            position: fixed;
+            top: 78px;
+            padding-top: 20px;
+            box-shadow: var(--shadow);
+            overflow-y: auto;
+        }
+
+        .sidebar-nav ul {
+            margin: 0;
+            padding: 0;
+            list-style-type: none;
+        }
+
+        .sidebar-nav ul .sidebar-item {
+            width: 100%;
+        }
+
+        .sidebar-nav ul .sidebar-item .sidebar-link {
+            color: var(--sidebar-text);
+            padding: var(--sidebar-link-padding);
+            display: flex;
+            align-items: center;
+            text-decoration: none;
+            opacity: 0.5;
+        }
+
+        .sidebar-nav ul .sidebar-item .sidebar-link i {
+            font-size: var(--sidebar-icon-size);
+            color: var(--sidebar-icons);
+            margin-right: 10px;
+        }
+
+        .sidebar-nav ul .sidebar-item.selected > .sidebar-link {
+            color: var(--white);
+            background: rgba(0, 0, 0, 0.1);
+            border-left: 2px solid var(--info);
+            opacity: 1;
+        }
+
+        .content {
+            margin-left: var(--sidebar-width-full);
+            padding: 20px;
+            padding-top: 64px;
+        }
+
+        /* Tabs */
+        .tabs {
+            margin-bottom: 20px;
+            display: flex;
+            border-bottom: 2px solid #ddd;
+        }
+
+        .tabs button {
+            background: var(--white);
+            border: none;
+            padding: 10px 20px;
+            cursor: pointer;
+            font-weight: bold;
+            margin-right: 5px;
+        }
+
+        .tabs button.active {
+            background: var(--info);
+            color: var(--white);
+            border-radius: 5px;
+        }
+
+        /* User List Table */
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        th, td {
+            padding: 10px;
+            border-bottom: 1px solid #ddd;
+            text-align: left;
+        }
+
+        th {
+            background-color: #f5f5f5;
+        }
+
+        .action-btn {
+            padding: 5px 10px;
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+
+        .action-btn.delete {
+            background-color: #dc3545;
+        }
+
+        .action-btn.edit {
+            background-color: #28a745;
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h1>User Management</h1>
+    </div>
+    <div class="left-sidebar">
+        <nav class="sidebar-nav">
+            <ul id="sidebarnav">
+                <li class="sidebar-item"><a href="dashboard.html" class="sidebar-link"><i class="icon">🏠</i>Dashboard</a></li>
+                <li class="sidebar-item"><a href="user-management.html" class="sidebar-link selected"><i class="icon">👥</i>User Management</a></li>
+                <li class="sidebar-item"><a href="categories.html" class="sidebar-link"><i class="icon">📂</i>Categories</a></li>
+                <li class="sidebar-item"><a href="locations.html" class="sidebar-link"><i class="icon">🌍</i>Locations</a></li>
+                <li class="sidebar-item"><a href="jobs.html" class="sidebar-link"><i class="icon">💼</i>Jobs</a></li>
+                <li class="sidebar-item"><a href="messages.html" class="sidebar-link"><i class="icon">💬</i>Messages</a></li>
+                <li class="sidebar-item"><a href="queries.html" class="sidebar-link"><i class="icon">❓</i>Queries</a></li>
+            </ul>
+        </nav>
+    </div>
+    <div class="content">
+        <div class="tabs">
+            <button class="tab-button active" onclick="showTab('profiles')">User Profiles</button>
+            <button class="tab-button" onclick="showTab('roles')">Roles & Permissions</button>
+        </div>
+        <div id="profiles" class="tab-content">
+            <h2>User Profiles</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th>User ID</th>
+                        <th>Name</th>
+                        <th>Email</th>
+                        <th>Role</th>
+                        
+                    </tr>
+                </thead>
+                <tbody>
+                    <!-- Sample user profile rows -->
+                    <tr>
+                        <td>1</td>
+                        <td>Jane Doe</td>
+                        <td>jane.doe@example.com</td>
+                        <td>Frontend Developer</td>
+                       
+                    </tr>
+                    <tr>
+                        <td>2</td>
+                        <td>John Smith</td>
+                        <td>john.smith@example.com</td>
+                        <td>Full Stack Developer</td>
+                      
+                    </tr>
+                    <!-- Add more user profile rows as needed -->
+                </tbody>
+            </table>
+        </div>
+        <div id="roles" class="tab-content" style="display: none;">
+            <h2>Roles & Permissions</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Role</th>
+                        <th>Permissions</th>
+                        <th>Actions</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <!-- Sample roles and permissions rows -->
+                    <tr>
+                        <td>Admin</td>
+                        <td>All Access</td>
+                        <td>
+                            <button class="action-btn edit">Edit</button>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Employer</td>
+                        <td>Job Posting, Application Review</td>
+                        <td>
+                            <button class="action-btn edit">Edit</button>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Job Seeker</td>
+                        <td>Job Search, Application</td>
+                        <td>
+                            <button class="action-btn edit">Edit</button>
+                        </td>
+                    </tr>
+                    <!-- Add more roles and permissions rows as needed -->
+                </tbody>
+            </table>
+        </div>
+    </div>
+    <script>
+        function showTab(tabId) {
+            // Hide all tabs
+            document.querySelectorAll('.tab-content').forEach(tab => {
+                tab.style.display = 'none';
+            });
+            
+            // Remove active class from all tab buttons
+            document.querySelectorAll('.tab-button').forEach(button => {
+                button.classList.remove('active');
+            });
+            
+            // Show the selected tab
+            document.getElementById(tabId).style.display = 'block';
+            document.querySelector(`.tab-button[onclick="showTab('${tabId}')"]`).classList.add('active');
+        }
+    </script>
+</body>
+</html>

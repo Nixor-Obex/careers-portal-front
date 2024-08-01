@@ -1,0 +1,85 @@
+/* 
+
+.filter-container {
+  display: flex;
+  justify-content: center;
+  margin: 20px 0;
+  margin-right:6%;
+}
+
+.filter-dropdown {
+  padding: 5px;
+  font-size: 16px;
+  width: 180px; 
+  margin: 0 10px; 
+  border-radius: 5px; 
+  border: 1px solid #ccc; 
+}
+
+
+
+
+.filter-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #f5f5f5;
+  padding: 10px;
+}
+
+.filter-dropdown {
+  margin: 0 10px;
+  padding: 5px;
+  font-family: Arial, sans-serif;
+  background-color: #5d5c5c14;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  color: #333;
+} */
+
+header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background-color: #ffffff;
+  display: flex;
+  align-items: center;
+  justify-content: center; /* Center align header content */
+  padding: 15px 20px; /* Adjust padding if needed */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  z-index: 1000;
+}
+
+header h1 {
+  font-size: 36px;
+  margin: 0;
+  margin-right: 100px;
+}
+
+header .navbar {
+  margin-left: 100px; 
+  display: flex;
+  gap: 10px; /* Reduce space between the buttons */
+}
+
+header .navbar a {
+  color: rgb(255, 111, 50); /* Button color */
+  text-decoration: none;
+  padding: 8px 12px; /* Reduce padding for button appearance */
+  border-radius: 5px; /* Rounded corners for buttons */
+  transition: background-color 0.3s, color 0.3s;
+  font-size: 18px; /* Adjust font size if necessary */
+}
+
+header .navbar a:hover {
+  background-color: rgb(255, 111, 50); /* Background color on hover */
+  color: #fff; /* Text color on hover */
+}
+
+h1 {
+  text-align: center;
+  font-size: 24px;
+ 
+}
+

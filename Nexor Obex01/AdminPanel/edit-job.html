@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Edit Job</title>
+    <style>
+        /* Variables for styling */
+        :root {
+            --form-bg: #f9f9f9;
+            --form-border: 1px solid #e0e0e0;
+            --button-color: rgb(255, 111, 50);
+            --white: #fff;
+        }
+
+        body {
+            font-family: 'MILLING', sans-serif;
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            background-color: #f4f4f4;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 20px auto;
+            padding: 20px;
+            background: var(--form-bg);
+            border: var(--form-border);
+            border-radius: 8px;
+        }
+
+        h1 {
+            margin-bottom: 20px;
+        }
+
+        .form-group {
+            margin-bottom: 15px;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 5px;
+        }
+
+        .form-group input, .form-group textarea {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            box-sizing: border-box;
+        }
+
+        .form-group textarea {
+            resize: vertical;
+        }
+
+        .btn {
+            background-color: var(--button-color);
+            color: var(--white);
+            border: none;
+            padding: 10px 20px;
+            cursor: pointer;
+            font-size: 16px;
+            font-weight: bold;
+            border-radius: 5px;
+            margin-right: 10px;
+        }
+
+        .btn.cancel {
+            background-color: #6c757d;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Edit Job</h1>
+        <form id="editJobForm">
+            <input type="hidden" id="jobId" name="jobId" value="">
+
+            <div class="form-group">
+                <label for="jobTitle">Job Title</label>
+                <input type="text" id="jobTitle" name="title" required>
+            </div>
+
+            <div class="form-group">
+                <label for="postedOn">Posted On</label>
+                <input type="date" id="postedOn" name="postedOn" required>
+            </div>
+
+            <div class="form-group">
+                <label for="autoPauseOn">Auto-Pause On</label>
+                <input type="date" id="autoPauseOn" name="autoPauseOn" required>
+            </div>
+
+            <div class="form-group">
+                <label for="candidatesApplied">Candidates Applied</label>
+                <input type="number" id="candidatesApplied" name="candidatesApplied" required>
+            </div>
+
+            <div class="form-group">
+                <button type="submit" class="btn">Save Changes</button>
+                <button type="button" class="btn cancel" onclick="window.history.back()">Cancel</button>
+            </div>
+        </form>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Get the job ID from the URL
+            const urlParams = new URLSearchParams(window.location.search);
+            const jobId = urlParams.get('jobId');
+
+            // Populate the form with existing job data
+            if (jobId) {
+                fetch(`/api/jobs/${jobId}`)
+                    .then(response => response.json())
+                    .then(data => {
+                        document.getElementById('jobId').value = data.id;
+                        document.getElementById('jobTitle').value = data.title;
+                        document.getElementById('postedOn').value = data.postedOn;
+                        document.getElementById('autoPauseOn').value = data.autoPauseOn;
+                        document.getElementById('candidatesApplied').value = data.candidatesApplied;
+                    })
+                    .catch(error => {
+                        console.error('Error fetching job details:', error);
+                    });
+            }
+
+            // Handle form submission
+            document.getElementById('editJobForm').addEventListener('submit', function(event) {
+                event.preventDefault();
+
+                const formData = new FormData(this);
+                const data = {
+                    title: formData.get('title'),
+                    postedOn: formData.get('postedOn'),
+                    autoPauseOn: formData.get('autoPauseOn'),
+                    candidatesApplied: formData.get('candidatesApplied')
+                };
+
+                fetch(`/api/jobs/${jobId}`, {
+                    method: 'PUT',
+                    headers: {
+                        'Content-Type': 'application/json',
+                        'Authorization': 'Bearer YOUR_ACCESS_TOKEN' // If authentication is needed
+                    },
+                    body: JSON.stringify(data)
+                })
+                .then(response => {
+                    if (response.ok) {
+                        alert('Job updated successfully!');
+                        window.location.href = 'jobs.html'; // Redirect to the jobs page
+                    } else {
+                        alert('Failed to update job. Please try again.');
+                    }
+                })
+                .catch(error => {
+                    console.error('Error updating job:', error);
+                    alert('An error occurred. Please try again.');
+                });
+            });
+        });
+    </script>
+</body>
+</html>

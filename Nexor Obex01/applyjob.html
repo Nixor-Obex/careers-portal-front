@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nixor Obex</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        /* Importing the MILLING font */
+        @font-face {
+            font-family: 'MILLING';
+            src: url('nixorfont.otf') format('truetype');
+        }
+
+        body {
+            font-family: 'MILLING', sans-serif;
+        }
+
+        body {
+            margin: 30px;
+            padding-top: 100px; /* Ensures content is not hidden behind the fixed header */
+            background-color: #f5f5f5;
+        }
+
+        header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            background-color: #ffffff;
+            display: flex;
+            align-items: center;
+            justify-content: center; /* Center align header content */
+            padding: 15px 20px; /* Adjust padding if needed */
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            z-index: 1000;
+        }
+
+        header h1 {
+            font-size: 36px;
+            margin: 0;
+            margin-right: 100px;
+        }
+
+        header .navbar {
+            margin-left: 100px; 
+            display: flex;
+            gap: 10px; /* Reduce space between the buttons */
+        }
+
+        header .navbar a {
+            color: rgb(255, 111, 50); /* Button color */
+            text-decoration: none;
+            padding: 8px 12px; /* Reduce padding for button appearance */
+            border-radius: 5px; /* Rounded corners for buttons */
+            transition: background-color 0.3s, color 0.3s;
+            font-size: 18px; /* Adjust font size if necessary */
+        }
+
+        header .navbar a:hover {
+            background-color: rgb(255, 111, 50); /* Background color on hover */
+            color: #fff; /* Text color on hover */
+        }
+
+        h1 {
+            text-align: center;
+            font-size: 24px;
+        }
+
+        header h1 {
+            margin-right: 270px;
+        }
+
+        .container {
+            max-width: 792px;
+            margin: 0 auto;
+            padding: 20px;
+            margin-right: 305px;
+        }
+
+        .job-name {
+            font-size: 24px;
+            margin-bottom: 40px;
+            font-weight: bold;
+            margin-left: 5px;
+        }
+
+        label {
+            font-size: 18px;
+        }
+
+        form {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+
+        input, textarea {
+            padding: 10px;
+            font-size: 18px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+        }
+
+        button {
+            padding: 10px 15px;
+            font-size: 18px;
+            background-color: rgb(255, 111, 50);
+            color: #ffffff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s, color 0.3s;
+        }
+
+        button:hover {
+            background-color: rgb(244, 70, 26);
+            color: #ffffff;
+            border: 1px solid rgb(255, 111, 50);
+        }
+
+        .survey-section {
+            margin-top: 40px;
+        }
+
+        .survey-section label {
+            display: block;
+            margin-top: 50px;
+            font-size: 18px;
+            /* font-weight: bold; */
+        }
+
+        .survey-section input[type="checkbox"] {
+            margin-right: 10px;
+        }
+    </style>
+</head>
+<body>
+
+    <header class="header">
+        <h1>Nixor Obex</h1>
+        <nav class="navbar">
+            <a href="job.html">Home</a>
+            <a href="login.html">LogIn</a>
+            <a href="AdminPanel/dashboard.html">Admin Panel</a>
+        </nav>
+    </header>
+    
+    <div class="container">
+        <div id="job-name" class="job-name"></div>
+        <h1>Submit Your Application</h1>
+        <form action="submit-application.html" method="post">
+            <label for="full-name">Full Name✱:</label>
+            <input type="text" id="full-name" name="full-name" required>
+             
+            <label for="email">Email✱:</label>
+            <input type="email" id="email" name="email" required>
+           
+            <label for="phone">Phone✱:</label>
+            <input type="tel" id="phone" name="phone" required>
+           
+            <label for="current-location">Current Location:</label>
+            <input type="text" id="current-location" name="current-location">
+           
+            <label for="current-company">Current Company✱:</label>
+            <input type="text" id="current-company" name="current-company" required>
+            
+            <label for="linkedin-url">LinkedIn URL:</label>
+            <input type="url" id="linkedin-url" name="linkedin-url">
+            
+            <label for="github-url">GitHub URL:</label>
+            <input type="url" id="github-url" name="github-url">
+            
+            <label for="portfolio-url">Portfolio URL:</label>
+            <input type="url" id="portfolio-url" name="portfolio-url">
+           
+            <label for="resume">Resume/CV✱:</label>
+            <input type="file" id="resume" name="resume" required>
+            
+            <label for="cover-letter">Add a cover letter or anything else you want to share:</label>
+            <textarea id="cover-letter" name="cover-letter" rows="6" required></textarea>
+
+            <div class="survey-section">
+                <p> Some Survey Question of Nixor Obex       Lorem ipsum dolor sit amet, consectetur adipiscing elit,
+                     sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                     We invite you to complete this optional survey to help us evaluate our diversity and
+                      inclusion efforts. Submission of the information on this form is strictly voluntary 
+                      and refusal to provide it will not subject you to any adverse treatment or affect your
+                       job application. Information obtained will be kept separate from your name or job
+                        application. This information 
+                     will be kept secure and confidential and will be used solely to evaluate our 
+                     diversity and inclusion efforts.
+                </p>
+                <label>1. What gender do you identify as?</label>
+                <input type="checkbox" name="gender" value="Female"> Female<br>
+                <input type="checkbox" name="gender" value="Male"> Male<br>
+                <input type="checkbox" name="gender" value="Non-binary"> Non-binary<br>
+
+                <label>2. What is your age range?</label>
+                <input type="checkbox" name="age" value="17 or younger"> 17 or younger<br>
+                <input type="checkbox" name="age" value="18-20"> 18-20<br>
+                <input type="checkbox" name="age" value="21-29"> 21-29<br>
+                <input type="checkbox" name="age" value="30-39"> 30-39<br>
+                <input type="checkbox" name="age" value="40-49"> 40-49<br>
+                <input type="checkbox" name="age" value="50-59"> 50-59<br>
+                <input type="checkbox" name="age" value="60 or older"> 60 or older<br>
+
+                <label>3. What is your nationality?</label>
+                <input type="checkbox" name="nationality" value="Japan"> Japan<br>
+                <input type="checkbox" name="nationality" value="Asia"> Asia<br>
+                <input type="checkbox" name="nationality" value="Europe"> Europe<br>
+                <input type="checkbox" name="nationality" value="North America"> North America<br>
+                <input type="checkbox" name="nationality" value="Central America, South America"> Central America, South America<br>
+                <input type="checkbox" name="nationality" value="Latin America, Caribbean"> Latin America, Caribbean<br>
+                <input type="checkbox" name="nationality" value="Oceania"> Oceania<br>
+                <input type="checkbox" name="nationality" value="Africa"> Africa<br>
+                <input type="checkbox" name="nationality" value="Middle Eastern"> Middle Eastern<br>
+                <input type="checkbox" name="nationality" value="Others"> Others<br>
+
+                <label>4. Do you have a disability?</label>
+                <input type="checkbox" name="disability" value="YES"> YES, I have a disability.<br>
+                <input type="checkbox" name="disability" value="NO"> NO, I don't have a disability.<br>
+                <input type="checkbox" name="disability" value="Do not wish to answer"> Do not wish to answer.<br>
+
+                <label>5. What is your highest level of education completed?</label>
+                <input type="checkbox" name="education" value="High school diploma or equivalent"> High school diploma or equivalent<br>
+                <input type="checkbox" name="education" value="Bachelor’s degree"> Bachelor’s degree<br>
+                <input type="checkbox" name="education" value="Master’s degree"> Master’s degree<br>
+                <input type="checkbox" name="education" value="Doctorate (e.g., PhD, EdD)"> Doctorate (e.g., PhD, EdD)<br>
+                <input type="checkbox" name="education" value="Prefer not to answer"> Prefer not to answer<br>
+
+                <label>6. What is your current employment status?</label>
+                <input type="checkbox" name="employment-status" value="Employed full-time"> Employed full-time<br>
+                <input type="checkbox" name="employment-status" value="Employed part-time"> Employed part-time<br>
+                <input type="checkbox" name="employment-status" value="Unemployed, looking for work"> Unemployed, looking for work<br>
+                <input type="checkbox" name="employment-status" value="Student"> Student<br>
+                <input type="checkbox" name="employment-status" value="Prefer not to answer"> Prefer not to answer<br>
+
+                <label>7. What is your marital status?</label>
+                <input type="checkbox" name="marital-status" value="Single, never married"> Single, never married<br>
+                <input type="checkbox" name="marital-status" value="Married"> Married<br>
+                <input type="checkbox" name="marital-status" value="Domestic partnership"> Domestic partnership<br>
+                <input type="checkbox" name="marital-status" value="Divorced"> Divorced<br>
+                <input type="checkbox" name="marital-status" value="Prefer not to answer"> Prefer not to answer<br>
+
+                <label>8. What is your ethnic background?</label>
+                <input type="checkbox" name="ethnic-background" value="Asian"> Asian<br>
+                <input type="checkbox" name="ethnic-background" value="Black or African American"> Black or African American<br>
+                <input type="checkbox" name="ethnic-background" value="Hispanic or Latino"> Hispanic or Latino<br>
+                <input type="checkbox" name="ethnic-background" value="White"> White<br>
+                <input type="checkbox" name="ethnic-background" value="Prefer not to answer"> Prefer not to answer<br>
+
+                <label>9. What is your primary language?</label>
+                <input type="checkbox" name="primary-language" value="English"> English<br>
+                <input type="checkbox" name="primary-language" value="Spanish"> Spanish<br>
+                <input type="checkbox" name="primary-language" value="Chinese"> Chinese<br>
+                <input type="checkbox" name="primary-language" value="Hindi"> Hindi<br>
+                <input type="checkbox" name="primary-language" value="Prefer not to answer"> Prefer not to answer<br>
+
+                <label>10. What is your sexual orientation?</label>
+                <input type="checkbox" name="sexual-orientation" value="Heterosexual"> Heterosexual<br>
+                <input type="checkbox" name="sexual-orientation" value="Homosexual"> Homosexual<br>
+                <input type="checkbox" name="sexual-orientation" value="Bisexual"> Bisexual<br>
+                <input type="checkbox" name="sexual-orientation" value="Pansexual"> Pansexual<br>
+                <input type="checkbox" name="sexual-orientation" value="Prefer not to answer"> Prefer not to answer<br>
+            </div>
+
+            <button type="submit">Submit Application</button>
+        </form>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const urlParams = new URLSearchParams(window.location.search);
+            const jobId = urlParams.get('job');
+
+            console.log('Job ID from URL:', jobId);  // Debugging: Check the jobId value
+            
+            const jobs = {
+                job1: 'Deputy Manager of Finance and Investor Relations Group',
+                job2: 'Global Legal Officer',
+                job3: 'Legal Officer',
+                job4: 'Senior HR Generalist',
+                job5: 'DevOps Engineer for Ground Segment',
+                job6: 'Electrical AIT Engineer',
+                job7: 'Embedded Software Engineer',
+                job8: 'Engineering Interns',
+                job9: 'Lander System Engineer',
+                job10: 'Payload Engineer',
+                job11: 'Executive VP',
+                job12: 'Indo Pacific Sales Associate',
+                job13: 'Indo Pacific Sales Specialist',
+                job14: 'Engineering Interns',
+                job15: 'Senior Payload Sales Specialist',
+                job16: 'Business Analyst'
+            };
+            console.log('Jobs object:', jobs);
+            if (jobs[jobId]) {
+                // console.log('Job found:', jobs[jobId]);
+                document.getElementById('job-name').textContent = ` ${jobs[jobId]}`;
+            } else {
+                document.getElementById('job-name').textContent = 'Unknown Position';
+            }
+        });
+    </script>
+</body>
+</html>
