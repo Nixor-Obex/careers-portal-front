@@ -19,4 +19,4 @@ jobs:
         uses: actions/deploy-pages@v3
 
         with:
-          path: './Nexor Obex01/job.html'
+          folder: './Nexor Obex01/job.html'
