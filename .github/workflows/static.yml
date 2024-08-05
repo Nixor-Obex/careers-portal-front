@@ -2,21 +2,21 @@
 name: Deploy static content to Pages
 
 permissions:
-  contents: read
-  pages: write
-  id-token: write
+  contents: read  # Allows reading repository content
+  pages: write  # Allows writing to GitHub Pages
+  id-token: write # Allows using a personal access token with repo scopes
 
 on:
   push:
-    branches: [test]
+    branches: [test]  # Trigger deployment on pushes to the "test" branch
 
 jobs:
   deploy:
     runs-on: ubuntu-latest
+
     steps:
       - uses: actions/checkout@v3
       - name: Deploy to GitHub Pages
         uses: actions/deploy-pages@v3
-
         with:
-          folder: './Nexor Obex01/'
+          source: ./Nexor Obex01/job.html  # Path to your HTML file
